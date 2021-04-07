@@ -1,0 +1,3 @@
+@moves.map do |move| 
+  render partial: "moves.json.jb" locals: {move: move}
+end

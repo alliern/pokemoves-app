@@ -1,0 +1,1 @@
+render partial: "moves.json.jb" locals: {move: @move}
