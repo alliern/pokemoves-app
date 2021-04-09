@@ -1,5 +1,5 @@
 class Api::MovesController < ApplicationController
-  before_action :authenticate_admin, except: [:index, :show ]
+  # before_action :authenticate_admin, except: [:index, :show ]
 
   def index
     response = HTTP.get("https://pokeapi.co/api/v2/move/?limit=60")
@@ -42,7 +42,7 @@ class Api::MovesController < ApplicationController
   end
 
   def destroy
-    move = Move.find_by(name: params[:name])
+    move = Move.find_by(id: params[:id])
     move.delete
     render json: {message: "successfully deleted"}
   end

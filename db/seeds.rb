@@ -5,5 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# pokemon = pokemon.create(name: "Slowpoke", type_1: "water", type_2: "psychic", region: "Kanto")
-# pokemon = pokemon.create(name: "Slowpoke", type_1: "psychic", region: "Galar")
+# pokemon = Pokemon.create!(name: "Slowpoke", type_1: "water", type_2: "psychic", region: "Kanto")
+# pokemon = Pokemon.create!(name: "Slowpoke", type_1: "psychic", region: "Galar")
+# pokemon = Pokemon.create!(name: "Vulpix", type_1:  "Ice", region: "Alola")
+# pokemon = Pokemon.create!(name: "Polywrath", type_1: "water", type_2: "fighting", region: "Kanto")
+
+# move = Move.create!(name: "Bubble Beam", type_: "water", hm_tm: "TM", category: "special")
+# move = Move.create!(name: "Pound", type_: "normal", hm_tm: "no", category: "physical")
+# move = Move.create!(name: "Dig", type_: "ground", hm_tm: "TM", category: "physical")
+# move = Move.create!(name: "Fly", type_: "flying", hm_tm: "HM", category: "physical")
+# move = Move.create!(name: "Psywave", type_: "psychic", hm_tm: "TM", category: "special")
+
+poke_move = PokeMove.create(pokemon_id: 1, move_id: 1, hm_tm: "no", leveling: "yes")
+poke_move = PokeMove.create(pokemon_id: 4, move_id: 1, hm_tm: "TM", leveling: "yes")
