@@ -16,6 +16,14 @@ Rails.application.routes.draw do
     patch "/moves/:id" => "moves#update"
     delete "/moves/:id" => "moves#destroy" 
 
+    get "/poke_moves" => "poke_moves#index"
+    get "/poke_moves/:id" => "poke_moves#show"
+    # get "poke_moves/:id/edit" => "poke_moves#edit"
+    # get "poke_moves/new" => "poke_moves#new"
+    post "/poke_moves" => "poke_moves#create"
+    patch "/poke_moves/:id" => "poke_moves#update"
+    delete "/poke_moves/:id" => "poke_moves#destroy" 
+
     get "/users" => "users#index"
     get "/users/:id" => "users#show"
     get "users/:id/edit" => "users#edit"

@@ -2,7 +2,14 @@ class Api::PokeMovesController < ApplicationController
   # before_action :authenticate_admin, except: [:index, :show]
 
   def index
-    @pokemoves = Pokemove.all
+    if params[:pokemon]
+      same as Pokemon.find_by(name: params[:pokemon])
+      @pokemoves = Pokemove.pokemons
+    elsif params[:move]
+      same as Move.find_by(name: params[:move])
+      @pokemoves = Pokemove.moves
+    end
+
     render "index.json.jb"
   end
 
@@ -18,10 +25,26 @@ class Api::PokeMovesController < ApplicationController
     if @pokemove.save
       render json: {message: "successfully created"}
     else 
-      render json {errors: @pokemove.errors.full_messages}, status: 406
+      render json {error: @pokemove.errors.full_messages}, status: 406
     end
   end
 
-  def
+  def update
+    @pokemove = Pokemove.find_by(id: params[:id])
+    @pokemove.pokemon_id: params[:pokemon_id] || @pokemove.pokemon_id,
+    @pokemove.move_id: params[:move_id] || @pokemove.move_id
+
+    if @pokemove.save
+      render json: {message: "successfully updated"}
+    else
+      render json: {error: @pokemove.errors.full_messages), status: 406}
+    end
+  end
+
+  def destroy
+    @pokemove = Pokemove.find_by(id: params[:id])
+    @pokemove.delete
+    render json: {message: "successfully deleted"}
+  end
 end
 
