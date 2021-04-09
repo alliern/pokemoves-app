@@ -1,4 +1,4 @@
 class Api::PokemonController < ApplicationController
-  has_many: poke_moves
-  has_many: moves, through: poke_moves
+  before_action :authenticate_admin, except: [:index, :show ]
+
 end
