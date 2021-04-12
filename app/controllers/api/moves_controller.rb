@@ -2,13 +2,12 @@ class Api::MovesController < ApplicationController
   # before_action :authenticate_admin, except: [:index, :show ]
 
   def index
-    response = HTTP.get("https://pokeapi.co/api/v2/move/?limit=60")
-      render json: response.parse 
+  
+   
   end
 
   def show
-    response = HTTP.get("https://pokeapi.co/api/v2/move/#{params[:id]}?limit=60")
-      render json: response.parse 
+  
   end
   
   def create
