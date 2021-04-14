@@ -2,21 +2,21 @@ class Api::MovesController < ApplicationController
   # before_action :authenticate_admin, except: [:index, :show ]
 
   def index
-  
-   
+    @moves = Move.all
+    render "index.json.jb"
   end
 
   def show
+    @move = Move.find_by(id: params[:id])
+    render "show.json.jb"
   
   end
   
   def create
     @move = Move.new(
     name: params[:name],
-    type: params[:type],
-    category: params[:category],
+    type_0: params[:type_0],
     hm_tm: params[:hm_tm],
-    leveling: params[:leveling],
     category: params[:category]
     )
     if @move.save
@@ -27,11 +27,12 @@ class Api::MovesController < ApplicationController
   end
 
   def update
-    @move = Move.find_by(name: params[:name])
-    @move.name = params[:name] || @move.name,
-    @move.type = params[:type] || @move.type,
-    @move.hm_tm = params[:hm_tm] || @move.hm_tm,
-    @move.leveling = params[:leveling] || @move.leveling,
+    move_id = params[:id]
+    @move = Move.find_by(id: move_id)
+
+    @move.name = params[:name] || @move.name
+    @move.type_0 = params[:type_0] || @move.type_0
+    @move.hm_tm = params[:hm_tm] || @move.hm_tm
     @move.category = params[:category] || @move.category
     if @move.save
       render json: {message: "successfully updated"}

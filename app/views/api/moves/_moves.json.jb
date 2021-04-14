@@ -1,9 +1,8 @@
 {
   id: move.id,
   name: move.name,
-  type: move.type,
-  category: move.category,
+  type_0: move.type_0,
   hm_tm: move.hm_tm,
-  leveling: move.leveling,
+  category: move.category,
 
 }

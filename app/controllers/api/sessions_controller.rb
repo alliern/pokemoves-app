@@ -16,11 +16,6 @@ class Api::SessionsController < ApplicationController
       render json: {}, status: :unauthorized
     end
   end
-
-  def destroy
-    user = current_user
-    
-  end
     
 
 end

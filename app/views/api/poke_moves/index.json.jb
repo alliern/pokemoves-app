@@ -1,0 +1,3 @@
+@pokemoves.map do |poke_move|
+  render partial: "poke_moves.json.jb", locals: {pokemove: poke_move}
+end

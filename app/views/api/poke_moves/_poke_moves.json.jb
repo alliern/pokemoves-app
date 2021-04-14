@@ -1,0 +1,7 @@
+{
+  id: pokemove.id,
+  pokemon_id: pokemove.pokemon_id,
+  move_id: pokemove.move_id,
+  hm_tm: pokemove.hm_tm,
+  leveling: pokemove.leveling
+}
