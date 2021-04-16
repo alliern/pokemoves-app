@@ -1,5 +1,5 @@
 class Api::PokemonController < ApplicationController
-    before_action :authenticate_admin, except: [:index, :show ]
+    # before_action :authenticate_admin, except: [:index, :show ]
   
     def index
       @pokemons = Pokemon.all
@@ -15,10 +15,12 @@ class Api::PokemonController < ApplicationController
     def create
       @pokemon = Pokemon.new(
       name: params[:name],
-      type_0: params[:type_0],
-      hm_tm: params[:hm_tm],
-      category: params[:category]
+      type_1: params[:type_1],
+      type_2: params[:type_2],
+      region: params[:region],
+      image: params[:image],
       )
+
       if @pokemon.save
         render "show.json.jb"
       else
@@ -27,13 +29,13 @@ class Api::PokemonController < ApplicationController
     end
   
     def update
-      pokemon_id = params[:id]
-      @pokemon = Pokemon.find_by(id: pokemon_id)
+      @pokemon = Pokemon.find_by(id: params[:id])
   
-      @pokemon.name = params[:name] || @pokemon.name,
-      @pokemon.type_0 = params[:type_0] || @pokemon.type_0,
-      @pokemon.hm_tm = params[:hm_tm] || @pokemon.hm_tm,
-      @pokemon.category = params[:category] || @pokemon.category
+      @pokemon.name = params[:name] || @pokemon.name
+      @pokemon.type_1 = params[:type_0] || @pokemon.type_1
+      @pokemon.type_2 = params[:type_2] || @pokemon.type_2
+      @pokemon.region = params[:region] || @pokemon.region
+      @pokemon.image = params[:image] || @pokemon.image
       if @pokemon.save
         render json: {message: "successfully updated"}
       else

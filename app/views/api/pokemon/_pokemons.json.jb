@@ -3,5 +3,6 @@
   name: pokemon.name,
   type_1: pokemon.type_1,
   type_2: pokemon.type_2,
-  region: pokemon.region
+  region: pokemon.region,
+  image: pokemon.image
 }
