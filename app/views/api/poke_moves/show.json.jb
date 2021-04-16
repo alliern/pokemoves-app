@@ -1,1 +1,2 @@
 render partial: "poke_moves.json.jb", locals: {pokemove: @pokemove}
+
