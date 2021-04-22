@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_16_174420) do
+ActiveRecord::Schema.define(version: 2021_04_22_180750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_174420) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "hm_tm"
     t.string "leveling"
+    t.string "move_name"
   end
 
   create_table "pokemons", force: :cascade do |t|
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_174420) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.string "move"
   end
 
   create_table "users", force: :cascade do |t|

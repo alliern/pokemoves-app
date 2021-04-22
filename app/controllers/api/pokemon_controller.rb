@@ -2,7 +2,7 @@ class Api::PokemonController < ApplicationController
     # before_action :authenticate_admin, except: [:index, :show ]
   
     def index
-      @pokemons = Pokemon.all
+      @pokemons = Pokemon.all.order(:name)
       render "index.json.jb"
     end
   

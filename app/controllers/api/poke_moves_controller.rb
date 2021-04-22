@@ -25,6 +25,7 @@ class Api::PokeMovesController < ApplicationController
       move_id: params[:move_id],
       hm_tm: params[:hm_tm],
       leveling: params[:leveling],
+      move_name: params[:move_name],
     )
     if @pokemove.save
       render json: {message: "successfully created"}
@@ -36,10 +37,11 @@ class Api::PokeMovesController < ApplicationController
   def update
     @pokemove = PokeMove.find_by(id: params[:id])
 
-    @pokemove.pokemon_id = params[:pokemon_id] || @pokemove.pokemon_id,
-    @pokemove.move_id = params[:move_id] || @pokemove.move_id,
-    @pokemove.hm_tm = params[:hm_tm] || @pokemove.hm_tm,
-    @pokemove.leveling = params[:leveling] || @pokemove.leveling,
+    @pokemove.pokemon_id = params[:pokemon_id] || @pokemove.pokemon_id
+    @pokemove.move_id = params[:move_id] || @pokemove.move_id
+    @pokemove.hm_tm = params[:hm_tm] || @pokemove.hm_tm
+    @pokemove.leveling = params[:leveling] || @pokemove.leveling
+    @pokemove.move_name = params[:move_name] || @pokemove.move_name
 
     if @pokemove.save
       render json: {message: "successfully updated"}
