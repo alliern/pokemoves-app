@@ -11,6 +11,11 @@ class Api::UsersController < ApplicationController
     render "show.json.jb"
   end
 
+  def profile
+    @user = User.fund_by(id: current_user.id)
+    render "show.json.jb"
+  end
+
   
   def create
     user = User.new(

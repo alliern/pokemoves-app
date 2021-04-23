@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     # USERS:
     get "/users" => "users#index"
     get "/users/:id" => "users#show"
+    get "/users/:current_user" => "users#profile"
     get "users/:id/edit" => "users#edit"
     get "users/new" => "users#new"
     post "/users" => "users#create"
