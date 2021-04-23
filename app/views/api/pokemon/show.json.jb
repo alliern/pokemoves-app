@@ -1,1 +1,5 @@
-render partial: "pokemons.json.jb", locals: {pokemon: @pokemon}
+pm = render partial: "pokemons.json.jb", locals: {pokemon: @pokemon}
+  pm[:poke_moves] = @pokemon.poke_moves.map do |poke_move|
+    render partial: "/api/poke_moves/poke_moves", locals: {poke_move: poke_move}
+  end
+  pm

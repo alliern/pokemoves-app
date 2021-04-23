@@ -15,44 +15,44 @@ class Api::PokeMovesController < ApplicationController
   end
 
   def show
-    @pokemove = PokeMove.find_by(id: params[:id])
+    @poke_move = PokeMove.find_by(id: params[:id])
     render "show.json.jb"
   end
 
   def create
-    @pokemove = PokeMove.new(
+    @poke_move = PokeMove.new(
       pokemon_id: params[:pokemon_id],
       move_id: params[:move_id],
       hm_tm: params[:hm_tm],
       leveling: params[:leveling],
       move_name: params[:move_name],
     )
-    if @pokemove.save
+    if @poke_move.save
       render json: {message: "successfully created"}
     else 
-      render json: {error: @pokemove.errors.full_messages}, status: 406
+      render json: {error: @poke_move.errors.full_messages}, status: 406
     end
   end
 
   def update
-    @pokemove = PokeMove.find_by(id: params[:id])
+    @poke_move = PokeMove.find_by(id: params[:id])
 
-    @pokemove.pokemon_id = params[:pokemon_id] || @pokemove.pokemon_id
-    @pokemove.move_id = params[:move_id] || @pokemove.move_id
-    @pokemove.hm_tm = params[:hm_tm] || @pokemove.hm_tm
-    @pokemove.leveling = params[:leveling] || @pokemove.leveling
-    @pokemove.move_name = params[:move_name] || @pokemove.move_name
+    @poke_move.pokemon_id = params[:pokemon_id] || @poke_move.pokemon_id
+    @poke_move.move_id = params[:move_id] || @poke_move.move_id
+    @poke_move.hm_tm = params[:hm_tm] || @poke_move.hm_tm
+    @poke_move.leveling = params[:leveling] || @poke_move.leveling
+    @poke_move.move_name = params[:move_name] || @poke_move.move_name
 
-    if @pokemove.save
+    if @poke_move.save
       render json: {message: "successfully updated"}
     else
-      render json: {error: @pokemove.errors.full_messages}, status: 406
+      render json: {error: @poke_move.errors.full_messages}, status: 406
     end
   end
 
   def destroy
-    @pokemove = PokeMove.find_by(id: params[:id])
-    @pokemove.delete
+    @poke_move = PokeMove.find_by(id: params[:id])
+    @poke_move.delete
     render json: {message: "successfully deleted"}
   end
 end

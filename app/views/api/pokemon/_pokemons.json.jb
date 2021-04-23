@@ -5,5 +5,5 @@
   type_2: pokemon.type_2 || " none",
   region: pokemon.region,
   image: pokemon.image,
-  move: pokemon.poke_moves,
+  # move: pokemon.poke_moves,
 }

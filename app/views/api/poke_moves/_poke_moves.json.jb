@@ -1,8 +1,8 @@
 {
-  id: pokemove.id,
-  pokemon_id: pokemove.pokemon_id,
-  move_id: pokemove.move_id,
-  hm_tm: pokemove.hm_tm,
-  leveling: pokemove.leveling,
-  move_name: pokemove.move_name,
+  id: poke_move.id,
+  pokemon_id: poke_move.pokemon_id,
+  move_id: poke_move.move_id,
+  hm_tm: poke_move.hm_tm,
+  leveling: poke_move.leveling,
+  move_name: poke_move.move_name,
 }
