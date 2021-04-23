@@ -1,5 +1,5 @@
 class Api::MovesController < ApplicationController
-  # before_action :authenticate_admin, except: [:index, :show ]
+  before_action :authenticate_admin, except: [:index, :show ]
 
   def index
     @moves = Move.all
@@ -7,7 +7,7 @@ class Api::MovesController < ApplicationController
   end
 
   def show
-    @move = Move.find_by(id: params[:id])
+    @move = Move.all.order(:name)
     render "show.json.jb"
   
   end

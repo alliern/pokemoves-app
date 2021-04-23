@@ -7,5 +7,6 @@
   pokemon_4: user.pokemon_4,
   pokemon_5: user.pokemon_5,
   pokemon_6: user.pokemon_6,
+  admin: user.admin,
 
 }
