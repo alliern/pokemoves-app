@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     # USERS:
     get "/users" => "users#index"
     get "/users/:id" => "users#show"
-    get "/users/:current_user" => "users#profile"
+    get "/profile" => "users#profile"
     get "users/:id/edit" => "users#edit"
     get "users/new" => "users#new"
     post "/users" => "users#create"
@@ -44,14 +44,9 @@ Rails.application.routes.draw do
 
 
     # SESSIONS:
-    get "/sessions" => "sessions#index"
-    get "/sessions/:id" => "sessions#show"
-    get "sessions/:id/edit" => "sessions#edit"
     get "sessions/new" => "sessions#new"
     post "/sessions" => "sessions#create"
-    patch "/sessions/:id" => "sessions#update"
-    delete "/sessions/:id" => "sessions#destroy" 
-
+    
 
 
   end

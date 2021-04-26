@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
- before_action :authenticate_user, except: [:create]
+#  before_action :authenticate_user, except: [:create]
 
   def index
     @users = User.all
@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
   end
 
   def profile
-    @user = User.fund_by(id: current_user.id)
+    @user = current_user
     render "show.json.jb"
   end
 
