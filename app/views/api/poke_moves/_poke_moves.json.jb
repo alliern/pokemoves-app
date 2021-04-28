@@ -4,5 +4,5 @@
   move_id: poke_move.move_id,
   hm_tm: poke_move.hm_tm,
   leveling: poke_move.leveling,
-  move_name: poke_move.move_name,
+  move_name: poke_move.move_name.upcase,
 }
