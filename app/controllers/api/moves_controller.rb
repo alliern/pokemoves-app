@@ -2,8 +2,10 @@ class Api::MovesController < ApplicationController
   before_action :authenticate_admin, except: [:index, :show ]
 
   def index
-    @moves = Move.all.order(:name)
-    render "index.json.jb"
+    @moves = HTTP.get("https://pokeapi.co/api/v2/move/")
+    # @moves = Move.all.order(:name)
+    # render "index.json.jb"
+    render json: @moves.parse
   end
 
   def show
