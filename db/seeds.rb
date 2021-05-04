@@ -33,3 +33,9 @@
 # poke_move = PokeMove.create(pokemon_id: 1, move_id: 3, hm_tm: "TM", leveling: "no")
 # poke_move = PokeMove.create(pokemon_id: 2, move_id: 3, hm_tm: "TM", leveling: "no")
 # poke_move = PokeMove.create(pokemon_id: 4, move_id: 2, hm_tm: "no", leveling: "yes")
+
+# user_pokemon = UserPokemon.create(user_id: 1, pokemon_id: 4, pokemon_name: "Slowpoke")
+# user_pokemon = UserPokemon.create(user_id: 3, pokemon_id: 4, pokemon_name: "Slowpoke")
+# user_pokemon = UserPokemon.create(user_id: 3, pokemon_id: 1, pokemon_name: "Slowpoke")
+# user_pokemon = UserPokemon.create(user_id: 3, pokemon_id: 3, pokemon_name: "Vulpix")
+# user_pokemon = UserPokemon.create(user_id: 3, pokemon_id: 5, pokemon_name: "Dragonite")

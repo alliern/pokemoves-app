@@ -1,0 +1,6 @@
+{
+  id: user_pokemon.id,
+  user_id: user_pokemon.user_id,
+  pokemon_id: user_pokemon.pokemon_id,
+  pokemon_name: user_pokemon.pokemon_name,
+}
