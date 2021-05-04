@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-#  before_action :authenticate_user, except: [:create]
+ before_action :authenticate_user, except: [:create]
 
   def index
     @users = User.all
@@ -42,7 +42,7 @@ class Api::UsersController < ApplicationController
     @user.username = params[:username] || @user.username
     @user.email = params[:email] || @user.email = @user.email
     @user.password = params[:password] || @user.password
-    @user.password_confirmation = params[:password_confirmation] || @user.password_confirmation
+    # @user.password_confirmation = params[:password_confirmation] || @user.password_confirmation
     @user.pokemon_1 = params[:pokemon_1] || @user.pokemon_1
     @user.pokemon_2 = params[:pokemon_2] || @user.pokemon_2
     @user.pokemon_3 = params[:pokemon_3] || @user.pokemon_3

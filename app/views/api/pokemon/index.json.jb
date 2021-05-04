@@ -1,3 +1,6 @@
+# @pokemons.results.map do |pokemon|
+#   pokemon.name
 @pokemons.map do |pokemon|
   render partial: "pokemons.json.jb", locals: {pokemon: pokemon}
 end
+

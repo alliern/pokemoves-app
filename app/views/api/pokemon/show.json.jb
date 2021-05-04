@@ -3,3 +3,8 @@ pm = render partial: "pokemons.json.jb", locals: {pokemon: @pokemon}
     render partial: "/api/poke_moves/poke_moves", locals: {poke_move: poke_move}
   end
   pm
+
+#  {name: @pokemon.name,
+#   region: (@pokemon.moves.map { |move|
+#     move.move.name}),
+# }

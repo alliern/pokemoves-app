@@ -1,16 +1,24 @@
 class Api::PokemonController < ApplicationController
     before_action :authenticate_admin, except: [:index, :show ]
+    require 'poke-api-v2'
   
     def index
+      # @pokemons = PokeApi.get(:pokemon)
       @pokemons = Pokemon.all.order(:name)
       render "index.json.jb"
+      
+
     end
+
+  
   
     def show
+      # @pokemon = PokeApi.get(pokemon: params[:id])
       @pokemon = Pokemon.find_by(id: params[:id])
       render "show.json.jb"
-    
     end
+
+
     
     def create
       @pokemon = Pokemon.new(
