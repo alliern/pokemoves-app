@@ -1,0 +1,1 @@
+render partial: "user_pokemon.json.jb", locals: {user_pokemon: @user_pokemon}

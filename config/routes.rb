@@ -46,7 +46,12 @@ Rails.application.routes.draw do
     # SESSIONS:
     get "sessions/new" => "sessions#new"
     post "/sessions" => "sessions#create"
-    
+
+    patch "/user_pokemon/:id" => "user_pokemon#update"
+    get "/user_pokemon/:id" => "user_pokemon#show"
+    get "/user_pokemon/" => "user_pokemon#index"
+    post "/user_pokemon/" => "user_pokemon#create"
+    delete "/user_pokemon/:id" => "user_pokemon#destroy"
 
 
   end
