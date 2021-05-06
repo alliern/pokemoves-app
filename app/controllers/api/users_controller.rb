@@ -23,12 +23,6 @@ class Api::UsersController < ApplicationController
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
-      pokemon_1: params[:pokemon_1],
-      pokemon_2: params[:pokemon_2],
-      pokemon_3: params[:pokemon_3],
-      pokemon_4: params[:pokemon_4],
-      pokemon_5: params[:pokemon_5],
-      pokemon_6: params[:pokemon_6],
     )
     if user.save
       render json: {message: "User created Successfully"}, status: :created
@@ -43,12 +37,6 @@ class Api::UsersController < ApplicationController
     @user.email = params[:email] || @user.email = @user.email
     @user.password = params[:password] || @user.password
     # @user.password_confirmation = params[:password_confirmation] || @user.password_confirmation
-    @user.pokemon_1 = params[:pokemon_1] || @user.pokemon_1
-    @user.pokemon_2 = params[:pokemon_2] || @user.pokemon_2
-    @user.pokemon_3 = params[:pokemon_3] || @user.pokemon_3
-    @user.pokemon_4 = params[:pokemon_4] || @user.pokemon_4
-    @user.pokemon_5 = params[:pokemon_5] || @user.pokemon_5
-    @user.pokemon_6 = params[:pokemon_6] || @user.pokemon_6
     if @user.save
       render json: {message: "update successful"}
     else
