@@ -3,13 +3,7 @@ class Api::PokeMovesController < ApplicationController
 
   def index
     @pokemoves = PokeMove.all
-    # if params[:pokemon]
-    #   same as Pokemon.find_by(name: params[:pokemon])
-    #   @pokemoves = PokeMove.pokemons
-    # elsif params[:move]
-    #   same as Move.find_by(name: params[:move])
-    #   @pokemoves = PokeMove.moves
-    # end
+  
 
     render "index.json.jb"
   end
